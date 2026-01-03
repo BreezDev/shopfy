@@ -4033,7 +4033,360 @@ text-component {
   .h5.h5 select,
   .h6.h6 input,
   .h6.h6 textarea,
-  .h6.h6 select {
+.h6.h6 select {
     font-size: max(1rem, 100%);
+  }
+}
+
+/* ============================================================ */
+/*  MAFI CHAINS // GRUNGE + STREET ARMOR THEME OVERRIDE          */
+/* ============================================================ */
+
+:root {
+  --mafi-obsidian: #050505;
+  --mafi-ash: #0f0f10;
+  --mafi-steel: #1a1a1c;
+  --mafi-silver: #dcdcdc;
+  --mafi-bone: #f7f7f7;
+  --mafi-blood: #d71e2f;
+  --mafi-spark: #ff4d4d;
+  --mafi-ember: #ff974d;
+  --mafi-shadow: rgba(0, 0, 0, 0.8);
+  --mafi-border: #2a2a2a;
+  --mafi-noise: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0 8%, transparent 9%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.04) 0 6%, transparent 7%),
+    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.04) 0 6%, transparent 8%),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0 7%, transparent 9%);
+  --mafi-stripe: linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0.03) 0 20%,
+      transparent 25%,
+      rgba(255, 255, 255, 0.03) 30%,
+      transparent 35%,
+      rgba(255, 255, 255, 0.04) 40%,
+      transparent 100%
+    );
+  --mafi-glow: 0 0 30px rgba(215, 30, 47, 0.6), 0 0 80px rgba(255, 77, 77, 0.45);
+  --mafi-rivet: inset 0 0 0 1px var(--mafi-border), inset 0 0 20px rgba(0, 0, 0, 0.75);
+}
+
+body,
+.content-for-layout {
+  background: radial-gradient(circle at 10% 10%, rgba(215, 30, 47, 0.08), transparent 35%),
+    radial-gradient(circle at 90% 0%, rgba(255, 77, 77, 0.06), transparent 30%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0 6px, transparent 6px 12px),
+    var(--mafi-obsidian);
+  color: var(--mafi-silver);
+  letter-spacing: 0.03em;
+  text-rendering: optimizeLegibility;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  mix-blend-mode: screen;
+  background: var(--mafi-noise);
+  opacity: 0.24;
+  animation: grain 8s steps(10) infinite;
+}
+
+body::after {
+  background: linear-gradient(90deg, rgba(215, 30, 47, 0.12), transparent 50%, rgba(255, 77, 77, 0.1));
+  opacity: 0.4;
+  animation: pulse 6s ease-in-out infinite alternate;
+}
+
+main,
+.shopify-section,
+.footer,
+header {
+  position: relative;
+  z-index: 1;
+}
+
+header,
+.announcement-bar,
+.footer,
+.modal__toggle-open,
+.modal__toggle-close {
+  background-color: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--mafi-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+header a,
+.footer a,
+.announcement-bar a {
+  color: var(--mafi-bone);
+}
+
+a {
+  color: var(--mafi-spark);
+  text-decoration: none;
+  position: relative;
+  transition: color 150ms ease, text-shadow 150ms ease;
+}
+
+a:hover {
+  color: var(--mafi-ember);
+  text-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: var(--mafi-bone);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.9), 0 0 25px rgba(215, 30, 47, 0.45);
+}
+
+.subtitle,
+p {
+  color: var(--mafi-silver);
+}
+
+.button,
+button,
+[type='button'],
+[type='submit'],
+.shopify-challenge__button,
+.customer button,
+.customer .button {
+  background: linear-gradient(120deg, var(--mafi-blood), var(--mafi-spark));
+  border: 1px solid var(--mafi-spark);
+  color: #0a0a0a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  box-shadow: var(--mafi-glow), 0 10px 25px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, letter-spacing 120ms ease;
+}
+
+.button::after,
+button::after,
+[type='button']::after,
+[type='submit']::after,
+.shopify-challenge__button::after,
+.customer button::after,
+.customer .button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.25), transparent 40%, rgba(0, 0, 0, 0.25));
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.button:hover,
+button:hover,
+[type='button']:hover,
+[type='submit']:hover,
+.shopify-challenge__button:hover,
+.customer button:hover,
+.customer .button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--mafi-glow), 0 14px 30px rgba(0, 0, 0, 0.65);
+  letter-spacing: 0.12em;
+}
+
+.button:hover::after,
+button:hover::after,
+[type='button']:hover::after,
+[type='submit']:hover::after,
+.shopify-challenge__button:hover::after,
+.customer button:hover::after,
+.customer .button:hover::after {
+  opacity: 1;
+}
+
+.button--secondary,
+button.secondary,
+.button.secondary,
+.shopify-challenge__button--secondary {
+  background: linear-gradient(135deg, var(--mafi-ash), var(--mafi-steel));
+  color: var(--mafi-silver);
+  border-color: var(--mafi-border);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+}
+
+input,
+textarea,
+select {
+  background: var(--mafi-ash);
+  border: 1px solid var(--mafi-border);
+  color: var(--mafi-bone);
+  box-shadow: var(--mafi-rivet);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 120ms ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--mafi-spark);
+  box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.35), var(--mafi-rivet);
+  transform: translateY(-1px);
+}
+
+.card,
+.collection-card,
+.product-card,
+.resource-card,
+.predictive-search-results__card {
+  background: linear-gradient(135deg, rgba(26, 26, 28, 0.85), rgba(8, 8, 9, 0.95));
+  border: 1px solid var(--mafi-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.card::before,
+.collection-card::before,
+.product-card::before,
+.resource-card::before,
+.predictive-search-results__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--mafi-stripe);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.card:hover,
+.collection-card:hover,
+.product-card:hover,
+.resource-card:hover,
+.predictive-search-results__card:hover {
+  border-color: var(--mafi-spark);
+  box-shadow: var(--mafi-glow), 0 20px 60px rgba(0, 0, 0, 0.75);
+}
+
+.badge,
+.tag,
+.product__title small,
+.caption-large {
+  background: rgba(255, 77, 77, 0.12);
+  color: var(--mafi-spark);
+  border: 1px solid rgba(255, 77, 77, 0.4);
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.announcement-bar {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  box-shadow: inset 0 -1px 0 rgba(255, 77, 77, 0.7);
+}
+
+.footer {
+  border-top: 1px solid var(--mafi-border);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumb,
+.pagination,
+.tabs,
+.menu-drawer__navigation {
+  letter-spacing: 0.1em;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--mafi-bone);
+  border-bottom: 1px dashed rgba(255, 77, 77, 0.5);
+  padding-bottom: 0.15rem;
+}
+
+.link:hover {
+  color: var(--mafi-spark);
+  border-bottom-style: solid;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mafi-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mafi-border);
+  border: 2px solid var(--mafi-obsidian);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mafi-spark);
+  box-shadow: var(--mafi-glow);
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(-3%, -8%);
+  }
+  20% {
+    transform: translate(6%, 4%);
+  }
+  30% {
+    transform: translate(-5%, 6%);
+  }
+  40% {
+    transform: translate(8%, -4%);
+  }
+  50% {
+    transform: translate(-2%, 8%);
+  }
+  60% {
+    transform: translate(8%, 2%);
+  }
+  70% {
+    transform: translate(-6%, 4%);
+  }
+  80% {
+    transform: translate(2%, -6%);
+  }
+  90% {
+    transform: translate(4%, 2%);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 0.45;
   }
 }
