@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "about_hero": {
+      "type": "grunge-hero",
+      "blocks": {
+        "stat_story": {"type": "stat", "settings": {"title": "DIY Roots", "text": "Hand-pulled screens, custom inks."}},
+        "stat_year": {"type": "stat", "settings": {"title": "Since the garage", "text": "Birthed between amps and spray paint."}}
+      },
+      "block_order": ["stat_story", "stat_year"],
+      "settings": {
+        "badge_text": "About",
+        "heading": "Meet the maker behind the noise",
+        "subheading": "I design brutal, cinematic graphics meant to be worn hard. Everything is produced in small runs so the squad stays unique.",
+        "primary_link": "/collections/all",
+        "primary_label": "Shop the drop",
+        "secondary_link": "/contact",
+        "secondary_label": "Book a collab",
+        "image": null
+      }
+    },
+    "about_info": {
+      "type": "grunge-info-grid",
+      "blocks": {
+        "card_origin": {"type": "card", "settings": {"tag": "Origin", "title": "Garage to stage", "body": "Started as bootlegs for friends, evolved into a full line tested at shows and festivals."}},
+        "card_materials": {"type": "card", "settings": {"tag": "Materials", "title": "Hardware-grade", "body": "Heavy cotton, ring-spun blends, and metal-inspired finishing for long nights."}},
+        "card_images": {"type": "card", "settings": {"tag": "Drop your images", "title": "Add lookbook shots", "body": "Slot in hero photos, print details, or on-body shots to make this page yours."}}
+      },
+      "block_order": ["card_origin", "card_materials", "card_images"],
+      "settings": {
+        "eyebrow": "Story",
+        "heading": "Built to look mean & feel luxe",
+        "subheading": "Swap in your own copy and photography to prove the craft behind every piece."
+      }
+    },
+    "about_reviews": {
+      "type": "grunge-review-wall",
+      "blocks": {
+        "rev_a": {"type": "review", "settings": {"rating": "5 / 5", "quote": "Finally found merch that fits the music.", "author": "Resident DJ"}},
+        "rev_b": {"type": "review", "settings": {"rating": "4.8 / 5", "quote": "Packaging felt like opening a record sleeve.", "author": "Collector"}}
+      },
+      "block_order": ["rev_a", "rev_b"],
+      "settings": {
+        "eyebrow": "Reviews",
+        "heading": "Trusted by the pit",
+        "subheading": "Social proof you can update with quotes from your crew or customers."
+      }
+    }
+  },
+  "order": ["about_hero", "about_info", "about_reviews"]
+}
