@@ -4082,6 +4082,45 @@ body.grunge-theme main {
   z-index: 1;
 }
 
+body.grunge-theme.template-product {
+  background: #000;
+  color: #f5f1e6;
+  letter-spacing: 0.06em;
+}
+
+body.grunge-theme.template-product::before,
+body.grunge-theme.template-product .grunge-ambient {
+  display: none;
+}
+
+main[data-template='product'] .section-background {
+  background: #000;
+  opacity: 1;
+}
+
+main[data-template='product'] .section {
+  background: transparent;
+  border: 1px solid #cc0000;
+  box-shadow: 0 0 40px rgb(204 0 0 / 22%);
+}
+
+main[data-template='product'] .product-information.section {
+  border-radius: 26px;
+  border: 1px solid #cc0000;
+  box-shadow: 0 28px 56px rgb(0 0 0 / 55%), 0 0 0 1px rgb(204 0 0 / 36%);
+}
+
+main[data-template='product'] .product-details h1,
+main[data-template='product'] .header-logo {
+  color: #cc0000;
+}
+
+main[data-template='product'] .product-details .price-item,
+main[data-template='product'] .product-details .product-form__buttons .button,
+main[data-template='product'] .product-details .product-form__buttons .button:hover {
+  text-shadow: 0 6px 18px rgb(0 0 0 / 45%);
+}
+
 .grunge-ambient {
   position: fixed;
   inset: 0;
