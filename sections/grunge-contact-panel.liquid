@@ -1,0 +1,116 @@
+<section class="section grunge-contact" id="grunge-contact-{{ section.id }}">
+  <div class="grunge-contact__grid">
+    <div class="grunge-contact__panel">
+      {% if section.settings.eyebrow != blank %}
+        <p class="grunge-grid__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p>{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      <div class="grunge-contact__meta">
+        {% if section.settings.email != blank %}
+          <p><strong>Email:</strong> <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></p>
+        {% endif %}
+        {% if section.settings.phone != blank %}
+          <p><strong>Phone:</strong> <a href="tel:{{ section.settings.phone }}">{{ section.settings.phone }}</a></p>
+        {% endif %}
+        {% if section.settings.hours != blank %}
+          <p><strong>Hours:</strong> {{ section.settings.hours }}</p>
+        {% endif %}
+      </div>
+
+      <div class="grunge-contact__cta">
+        {% if section.settings.account_label != blank %}
+          <a class="button" href="{{ routes.account_url }}">{{ section.settings.account_label }}</a>
+        {% endif %}
+        {% if section.settings.primary_label != blank %}
+          <a class="button grunge-hero__secondary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="grunge-contact__map">
+      {% if section.settings.map_embed != blank %}
+        <div class="grunge-contact__map-embed">{{ section.settings.map_embed }}</div>
+      {% else %}
+        <p>Drop your studio photo, map embed, or flyer art here.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Grunge contact",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Contact / booking"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Reach the crew"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Hit us for sizing help, custom runs, collabs, or backstage access."
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "hey@mafi.chains"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "+1 (666) 000-4444"
+    },
+    {
+      "type": "text",
+      "id": "hours",
+      "label": "Hours",
+      "default": "Always online, studio visits by appointment"
+    },
+    {
+      "type": "text",
+      "id": "account_label",
+      "label": "Account button label",
+      "default": "Account & orders"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Secondary link"
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Secondary label",
+      "default": "Email form"
+    },
+    {
+      "type": "textarea",
+      "id": "map_embed",
+      "label": "Map or image embed"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grunge contact",
+      "category": "Contact"
+    }
+  ]
+}
+{% endschema %}

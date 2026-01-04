@@ -1,0 +1,144 @@
+<section class="section grunge-hero" id="grunge-hero-{{ section.id }}">
+  <div class="grunge-hero__grid">
+    <div class="grunge-hero__copy">
+      {% if section.settings.badge_text != blank %}
+        <div class="grunge-hero__badge">
+          <span aria-hidden="true">⚡</span>
+          <span>{{ section.settings.badge_text }}</span>
+        </div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h1 class="grunge-hero__title">{{ section.settings.heading }}</h1>
+      {% endif %}
+
+      {% if section.settings.subheading != blank %}
+        <p class="grunge-hero__desc">{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      <div class="grunge-hero__actions">
+        {% if section.settings.primary_label != blank %}
+          <a
+            class="button"
+            href="{{ section.settings.primary_link }}"
+          >
+            {{ section.settings.primary_label }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.secondary_label != blank %}
+          <a
+            class="button grunge-hero__secondary"
+            href="{{ section.settings.secondary_link }}"
+          >
+            {{ section.settings.secondary_label }}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="grunge-hero__statline">
+        {% for block in section.blocks %}
+          <div class="grunge-hero__stat" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <strong>{{ block.settings.title }}</strong>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <small>{{ block.settings.text }}</small>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="grunge-hero__art">
+      {% if section.settings.image != blank %}
+        <div
+          class="grunge-hero__image"
+          style="background-image:url({{ section.settings.image | image_url: width: 1200 }})"
+        ></div>
+      {% else %}
+        <div class="grunge-hero__image" style="background-image: linear-gradient(145deg, rgba(255,54,54,.35), rgba(255,255,255,.05)), url({{ 'icon-error.svg' | asset_url }})"></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Grunge hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge",
+      "default": "Metal couture"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ruthless drops for loud humans"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Armor up in statement pieces forged for the pit, the stage, and the street."
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary link"
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary label",
+      "default": "Shop the drop"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary label",
+      "default": "View lookbook"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Stat title",
+          "default": "24/7"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Stat body",
+          "default": "Support that actually answers"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Grunge hero",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
