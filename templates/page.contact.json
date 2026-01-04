@@ -1,4 +1,12 @@
-{
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
   "sections": {
     "main": {
       "type": "main-page",
@@ -134,27 +142,9 @@
         "padding-block-start": 32,
         "padding-block-end": 70
       }
-    },
-    "grunge_contact": {
-      "type": "grunge-contact-panel",
-      "settings": {
-        "eyebrow": "Contact",
-        "heading": "Talk to the shop",
-        "subheading": "Use the form below or hit the account button for order history and tracking.",
-        "email": "crew@mafi.chains",
-        "phone": "+1 (555) 999-1313",
-        "hours": "Replies in under 24 hours",
-        "account_label": "Account & orders",
-        "primary_link": "#ContactForm",
-        "primary_label": "Email form",
-        "map_embed": ""
-      },
-      "blocks": {},
-      "block_order": []
     }
   },
   "order": [
-    "grunge_contact",
     "main",
     "form"
   ]
