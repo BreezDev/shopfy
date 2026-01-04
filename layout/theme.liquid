@@ -38,7 +38,14 @@
     {{ content_for_header }}
   </head>
 
-  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }} grunge-theme">
+  <body
+    class="
+      page-width-{{ settings.page_width }}
+      card-hover-effect-{{ settings.card_hover_effect }}
+      grunge-theme
+      template-{{ template.name }}
+    "
+  >
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
     {% if template == 'index' %}
       <div class="grunge-ambient" aria-hidden="true">
