@@ -38,8 +38,26 @@
     {{ content_for_header }}
   </head>
 
-  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
+  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }} grunge-theme">
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
+    {% if template == 'index' %}
+      <div class="grunge-ambient" aria-hidden="true">
+        <div class="grunge-ambient__glow"></div>
+        <div class="grunge-ambient__noise"></div>
+        <div class="grunge-ambient__grid"></div>
+        <div class="grunge-ambient__orbs">
+          <span class="orb orb--left"></span>
+          <span class="orb orb--right"></span>
+        </div>
+      </div>
+
+      <nav class="grunge-ribbon" aria-label="Quick shopping links">
+        <div class="grunge-ribbon__pill" aria-hidden="true">LOUDER THAN NORMAL</div>
+        <a class="grunge-ribbon__link" href="{{ routes.all_products_collection_url }}">Shop everything</a>
+        <a class="grunge-ribbon__link" href="{{ routes.collections_url }}">Find a collection</a>
+        <a class="grunge-ribbon__link" href="/pages/contact">Talk to a human</a>
+      </nav>
+    {% endif %}
     <div id="header-group">
       {% sections 'header-group' %}
     </div>
