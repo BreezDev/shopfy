@@ -4561,6 +4561,15 @@ a {
   filter: drop-shadow(0 0 8px rgba(255, 77, 77, 0.45));
 }
 
+.product-information .text-block,
+.product-information .text-block :is(p, h1, h2, h3, h4, h5, h6) {
+  color: var(--color-foreground);
+}
+
+.product-information .text-block :is(p, h1, h2, h3, h4, h5, h6) {
+  background-color: transparent;
+}
+
 .button,
 .cart-drawer__close-button,
 .dialog__close-button,

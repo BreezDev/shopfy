@@ -11,6 +11,21 @@
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
+    "custom_footer_builder": {
+      "type": "custom-content-builder",
+      "name": "Custom footer add-ons",
+      "settings": {
+        "heading": "More to explore",
+        "subheading": "Add carousels, videos, and imagery to your footer region.",
+        "section_width": "page-width",
+        "columns": 3,
+        "gap": 20,
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      },
+      "blocks": {},
+      "block_order": []
+    },
     "footer_QAE7jb": {
       "type": "footer",
       "blocks": {
@@ -178,6 +193,7 @@
   },
   "order": [
     "footer_QAE7jb",
+    "custom_footer_builder",
     "logo_Rpw4dD",
     "utilities"
   ]
